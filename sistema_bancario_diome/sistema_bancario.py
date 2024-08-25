@@ -13,8 +13,55 @@ Operações:
         Ao final do extrato deve aparecer o saldo
         Se tiver em branco retornar 'Não foram realizadas movimentações.'
 
-    Formato:
-        R$ XXX.XX
+        -> Adicionar a data e hora
+
+        Formato:
+            R$ XXX.XX
+    -> Transações:
+            10 transaççoes no dia
+            Retornar msg apos atingir o limite
+            Limite maximo de transações diário
+
+#####################################################
+    # Utilizar funções para otimizar o código
+        Separar em funções:
+            Deposito
+                Argumentos (positional only):
+                    saldo, valor, extrato
+                Retorno:
+                    saldo e extrato
+            Saque:
+                Argumentos (keyword only):
+                    saldo, valor, extrato, limite,
+                    numero_saque, limite_saque
+                Retorno:
+                    saldo, extrato
+            Extrato:
+                Argumentos (positional only e keyword only):
+                    posicionais: saldo
+                    nomeados: extrato
+                Retorno:
+                    Imprimir o extrato
+
+        Criar duas funções:
+            Criar cliente:
+                Armazenar em uma lista (nome,
+                data nascimento, cpf, endereço)
+
+                Endereço é uma string com formato: logradouro,
+                numero - bairro - vidade/sigla estado.
+                Armazenar somente os numeros do CPF. Retirar pontos e traço
+                CPF é unique (não cadastrar 2 CPF)
+
+            Criar conta corrente
+                Conta é composta por: agencia, numero da conta e usuario
+                Número da conta é sequencial iniciando em 1
+                Número da Agencia é fixo: '0001'
+                Usuário pode ter mais de uma conta, mas uma conta
+                pertence a somente um usuário.
+
+            Listar contas
+
 """
 
 menu = """
